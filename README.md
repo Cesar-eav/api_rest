@@ -37,7 +37,7 @@ asd# API de Tareas (Django + DRF)
 
 1. [Cliente (curl/SPA)]: Envía las peticiones a la API.
  |
-2. HTTP/JSON: Medio de comunicación entre cliente y servidor.
+2. HTTP/JSON: Capa de comunicación entre cliente y servidor.
  |
 3. [ API /api/v1 (DRF ViewSets/URLs) ]: Recibe las peticiones y define las rutas.
  |
