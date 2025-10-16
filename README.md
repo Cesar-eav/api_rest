@@ -45,14 +45,14 @@ asd# API de Tareas (Django + DRF)
 
 - ## Diagrama de arquitectura
 
-[Cliente (curl/SPA)]: Envía las peticiones a la API.
+1. [Cliente (curl/SPA)]: Envía las peticiones a la API.
  |
- HTTP/JSON: Medio de comunicación entre cliente y servidor.
+2. HTTP/JSON: Medio de comunicación entre cliente y servidor.
  |
-[ API /api/v1 (DRF ViewSets/URLs) ]: Recibe las peticiones y define las rutas.
+3. [ API /api/v1 (DRF ViewSets/URLs) ]: Recibe las peticiones y define las rutas.
  |
-[ Lógica/Serializers (validación) ]: Validan los datos y los convierten a objetos o JSON.
+4. [ Lógica/Serializers (validación) ]: Validan los datos y los convierten a objetos o JSON.
  |
-[ Modelo Django (ORM) ]: Conecta el código con la base de datos. Mapea la base de datos..
+5. [ Modelo Django (ORM) ]: Conecta el código con la base de datos. Mapea la base de datos..
  |
-[ DB SQLite (local) ]: Almacena los datos de forma permanente.
+6. [ DB SQLite (local) ]: Almacena los datos de forma permanente.
