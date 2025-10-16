@@ -2,14 +2,17 @@
 
 ## Instalación
 - **Asegúrate de tener instalado Python 3.11 o superior. Luego instala Django y DRF con:**
+
 -pip install django djangorestframework
 
 - **Crear la base de datos**
 
 -python manage.py makemigrations
+
 -python manage.py migrate
 
 - **Ejecutar el servidor**
+
 -python manage.py runserver
 
 - **Crear una tarea**
@@ -24,6 +27,8 @@ Body (JSON):
   "titulo": "Estudiar Django",
   "hecho": false
 }
+
+Respuesta esperada: 201 Created
 
 ## Recursos y URIs
 
