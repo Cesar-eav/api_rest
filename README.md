@@ -1,18 +1,18 @@
 # API de Tareas (Django + DRF)
 
 ## Instalación
--Asegúrate de tener instalado Python 3.11 o superior. Luego instala Django y DRF con:
+- **Asegúrate de tener instalado Python 3.11 o superior. Luego instala Django y DRF con:**
 pip install django djangorestframework
 
--Crear y configurar la base de datos:
+- **Crear la base de datos**
 
 python manage.py makemigrations
 python manage.py migrate
 
--Ejecutar el servidor
+- **Ejecutar el servidor**
 python manage.py runserver
 
--Crear una tarea válida
+- **Crear una tarea**
 
 Método: POST
 
