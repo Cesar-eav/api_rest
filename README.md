@@ -1,22 +1,32 @@
 asd# API de Tareas (Django + DRF)
 
 ## Recursos y URIs
+
 - **/api/v1/tareas/**  
 - **/api/v1/tareas/{id}/**
 
 ## Verbos y Códigos
+
 - **GET /api/v1/tareas/** → Lista paginada de tareas.  
   - 200 OK
+
 - **POST /api/v1/tareas/** → Crea una tarea. Body JSON: `{ "titulo": "texto", "hecho": false }`  
   - 201 Created; errores de validación: 400 Bad Request
+
 - **GET /api/v1/tareas/{id}/** → Detalle por id.  
   - 200 OK; si no existe: 404 Not Found
+
 - **PATCH /api/v1/tareas/{id}/** → Actualiza parcial (`titulo` o `hecho`).  
   - 200 OK; validación: 400 Bad Request; inexistente: 404 Not Found
+
 - **DELETE /api/v1/tareas/{id}/** → Elimina.  
   - 204 No Content; inexistente: 404 Not Found
 
-## Reglas REST (explicadas brevemente)
+
+
+
+## Reglas REST 
+
 - **Stateless**: el servidor no guarda estado de cliente entre peticiones (esta práctica no usa sesiones). Cada request trae lo necesario.
 - **JSON**: los requests/responses usan `Content-Type: application/json`.
 - **Versionado en la ruta**: se publica en `/api/v1/...` para poder evolucionar sin romper clientes (futuras `/api/v2/...`).
@@ -24,8 +34,6 @@ asd# API de Tareas (Django + DRF)
   - `GET` **no** cambia estado.  
   - `PATCH` repetido con el mismo body deja el **mismo estado** del recurso.  
   - `DELETE` sobre un recurso inexistente debe devolver 404 (no cambia estado).
-
-## Diagrama de arquitectura
 
 
 ## Reglas REST
@@ -35,5 +43,16 @@ asd# API de Tareas (Django + DRF)
 4. Idempotencia: algunas operaciones se pueden repetir varias veces sin cambiar el resultado.
 
 
+- ## Diagrama de arquitectura
 
-
+[Cliente (curl/SPA)]: Envía las peticiones a la API.
+ |
+ HTTP/JSON: Medio de comunicación entre cliente y servidor.
+ |
+[ API /api/v1 (DRF ViewSets/URLs) ]: Recibe las peticiones y define las rutas.
+ |
+[ Lógica/Serializers (validación) ]: Validan los datos y los convierten a objetos o JSON.
+ |
+[ Modelo Django (ORM) ]: Conecta el código con la base de datos. Mapea la base de datos..
+ |
+[ DB SQLite (local) ]: Almacena los datos de forma permanente.
